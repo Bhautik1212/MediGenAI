@@ -1,0 +1,171 @@
+/* ---------- Design tokens ---------- */
+:root {
+  --navy-900: #0b1f3a;
+  --navy-800: #102a4c;
+  --navy-700: #17396a;
+  --teal-600: #0f766e;
+  --teal-500: #0d9488;
+  --teal-400: #2dd4bf;
+  --teal-100: #ccfbf1;
+  --teal-50: #f0fdfa;
+
+  --bg: #f4f8fb;
+  --surface: #ffffff;
+  --text: #0f2540;
+  --muted: #5b6f86;
+  --border: #dbe5ee;
+  --border-strong: #c3d1de;
+
+  --danger: #b42318;
+  --danger-bg: #fef3f2;
+  --warn: #92400e;
+  --warn-bg: #fffbeb;
+  --warn-border: #fcd34d;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgba(11, 31, 58, 0.06);
+  --shadow: 0 4px 16px rgba(11, 31, 58, 0.08);
+  --shadow-lg: 0 18px 48px rgba(11, 31, 58, 0.18);
+
+  --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --maxw: 1180px;
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg) linear-gradient(180deg, #eaf3f8 0%, var(--bg) 360px) no-repeat;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  margin: 0 0 0.5em;
+  color: var(--navy-900);
+}
+
+h1 {
+  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 1.45rem;
+}
+h3 {
+  font-size: 1.05rem;
+}
+h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--teal-600);
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+  background: #e8f0f6;
+  padding: 1px 6px;
+  border-radius: 5px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(13, 148, 136, 0.55);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Layout ---------- */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page {
+  padding-top: 32px;
+  padding-bottom: 56px;
+}
+
+.page-header {
+  margin-bottom: 22px;
+}
+
+.page-header p {
+  color: var(--muted);
+  max-width: 62ch;
+  margin: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,10 @@
+# OPTIONAL - only for running a Diffusers model on your own computer (GENERATION_MODE=local).
+# CPU works but may take several minutes per image. A GPU is recommended for larger models.
+# To reuse an already installed CPU-only PyTorch in a virtual environment, create it with
+# `py -m venv --system-site-packages venv` before installing these requirements.
+# For GPU builds of torch, follow https://pytorch.org/get-started/locally/ first.
+torch
+diffusers>=0.30
+transformers>=4.40
+accelerate>=0.30
+safetensors
